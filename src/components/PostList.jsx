@@ -4,31 +4,35 @@ import classes from "../components/PostList.module.css";
 import NewPost from "./NewPost";
 import { useState } from "react";
 import Modal from "./Modal";
-const PostList = () => {
-      const [text,setText] = useState('');
-      const [author,setAuthor] = useState('');
-      const [modalVisible,setModal] = useState(true);
+const PostList = (props) => {
+  const [text, setText] = useState("");
+  const [author, setAuthor] = useState("");
 
-      function hideModaHandler(){
-        setModal(()=>!modalVisible);
-      }
-     
-      function bodychangeHandler(event) {
-       setText(event.target.value);
-      }
-      function authorChangeHandler(event) {
-       setAuthor(event.target.value);
-      }
-   
+
+
+  function bodychangeHandler(event) {
+    setText(event.target.value);
+  }
+  function authorChangeHandler(event) {
+    setAuthor(event.target.value);
+  }
+
   return (
     <>
-      <Modal onClose={hideModaHandler} value = {modalVisible}>
-          <NewPost onBodyChange ={bodychangeHandler} onAuthorChange = {authorChangeHandler}/>
-      </Modal>
+      {props.isPosting && (
+        <Modal onClose={props.onStopPosting}>
+          <NewPost
+            onBodyChange={bodychangeHandler}
+            onAuthorChange={authorChangeHandler}
+          />
+        </Modal>
+      )}
       <ul className={classes.posts}>
         <Post name={text} course={author} />
-        <Post name={text} course={author} />
-        
+        <Post
+          name={"Yeabsira working hard to land a remote job"}
+          course={"Yeaba"}
+        />
       </ul>
     </>
   );
