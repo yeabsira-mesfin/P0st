@@ -1,13 +1,13 @@
 import React from 'react'
-
+import classes from '../components/Post.module.css'
 
 const Post = (props) => {
    
   return (
-    <div>
-      <p>{props.name}</p>
+    <div className={classes.post}>
+      <p className={classes.author}>{props.name}</p>
       
-      <p>{props.course}</p>
+      <p className={classes.text}>{props.course}</p>
     </div>
   )
 }
