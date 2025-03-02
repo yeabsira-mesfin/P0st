@@ -46,6 +46,8 @@
   
   .actions button[type='button'] {
     background-color: transparent;
+    cursor: pointer;
+    
   }
   
   .actions button[type='button']:hover {

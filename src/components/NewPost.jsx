@@ -14,9 +14,11 @@ function NewPost(props) {
         <input type="text" id="name" placeholder='Type Something' required onChange={props.onAuthorChange} />
       </p>
       <p className={classes.actions}>
-        <buton type="button" onClick={props.onCancel}>Cancel</buton>
-        <buton>Submit</buton>
+        <button type="button" onClick={props.onCancel}>Cancel</button>
+        <button>Submit</button>
       </p>
+      
+
     </form>
   );
 }
