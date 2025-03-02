@@ -36,12 +36,12 @@
     padding: 0.5rem 1.5rem;
     border: none;
     border-radius: 4px;
-    background-color: #34036c;
-    color: #e5d5f7;
+    background-color: #008f24;
+    color: #5bf180;
   }
   
   .actions button:hover {
-    background-color: #23014a;
+    background-color: #10b439;
   }
   
   .actions button[type='button'] {
