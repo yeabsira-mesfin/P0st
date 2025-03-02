@@ -3,6 +3,7 @@ import Post from "./Post";
 import classes from "../components/PostList.module.css";
 import NewPost from "./NewPost";
 import { useState } from "react";
+import Modal from "./Modal";
 const PostList = () => {
       const [text,setText] = useState('');
       const [author,setAuthor] = useState('');
@@ -16,7 +17,9 @@ const PostList = () => {
    
   return (
     <>
-      <NewPost onBodyChange ={bodychangeHandler} onAuthorChange = {authorChangeHandler}/>
+      <Modal>
+          <NewPost onBodyChange ={bodychangeHandler} onAuthorChange = {authorChangeHandler}/>
+      </Modal>
       <ul className={classes.posts}>
         <Post name={text} course={author} />
         <Post name={text} course={author} />
